@@ -69,6 +69,7 @@ echo $TOPDIR
 TOPDIR=$(cd "$(dirname "$0")";pwd)
 ./test.sh
 echo "export"
+export TOPDIR
 ./test.sh
 ```
 
@@ -120,12 +121,12 @@ echo "export"
 echo "Is it morning? Please answer yes or no."
 read YES_OR_NO
 if [ "$YES_OR_NO" = "yes" ]; then
-  echo "Good morning!"
+	echo "Good morning!"
 elif [ "$YES_OR_NO" = "no" ]; then
-  echo "Good afternoon!"
+	echo "Good afternoon!"
 else
-  echo "Sorry, $YES_OR_NO not recognized. Enter yes or no."
-  exit 1
+  	echo "Sorry, $YES_OR_NO not recognized. Enter yes or no."
+  	exit 1
 fi
 exit 0
 ```
@@ -137,13 +138,13 @@ exit 0
 echo "Is it morning? Please answer yes or no."
 read YES_OR_NO
 case "$YES_OR_NO" in
-yes|y|Yes|YES)
-  echo "Good Morning!";;
-[nN]*)
-  echo "Good Afternoon!";;
-*)
-  echo "Sorry, $YES_OR_NO not recognized. Enter yes or no."
-  exit 1;;
+	yes|y|Yes|YES)
+  		echo "Good Morning!";;
+	[nN]*)
+  		echo "Good Afternoon!";;
+	*)
+  		echo "Sorry, $YES_OR_NO not recognized. Enter yes or no."
+  		exit 1;;
 esac
 exit 0	
 ```
